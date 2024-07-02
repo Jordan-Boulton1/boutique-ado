@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 from pathlib import Path
 import os
 
+from django_countries.widgets import LazyChoicesMixin
+
 if os.path.isfile('env.py'):
     import env
 
@@ -181,3 +183,6 @@ STRIPE_CURRENCY = 'usd'
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+
+LazyChoicesMixin.get_choices = lambda self: self._choices
+LazyChoicesMixin.choices = property(LazyChoicesMixin.get_choices, LazyChoicesMixin.set_choices)
