@@ -16,6 +16,9 @@ import dj_database_url
 
 from django_countries.widgets import LazyChoicesMixin
 
+if os.path.isfile('env.py'):
+    import env
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

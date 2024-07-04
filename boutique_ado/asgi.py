@@ -9,9 +9,6 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/asgi/
 
 import os
 
-# Import the env.py script
-import env
-
 from django.core.asgi import get_asgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'boutique_ado.settings')
